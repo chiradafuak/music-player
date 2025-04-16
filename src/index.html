@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmony Player</title>
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8">
+
+    <header class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold">
+        <i class="fas fa-music text-purple-500 mr-2"></i>
+        Spatify
+      </h1>
+      <button class="bg-gray-700 hover:bg-gray-600 p-2 rounded-full">
+        <i class="fas fa-cog"></i>
+      </button>
+    </header>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+      <div class="lg:w-2/3 bg-gray-800 rounded-xl p-6 shadow-lg">
+        <div class="flex flex-col items-center">
+
+          <div class="w-64 h-64 rounded-xl overflow-hidden shadow-lg mb-6">
+            <img id="album-art" src="/assets/images/cover-1.jpg" alt="Album Cover" class="w-full h-full object-cover">
+          </div>
+       
+          <div class="text-center mb-8 w-full">
+            <h2 id="song-title" class="text-2xl font-bold mb-1">Song Title</h2>
+            <p id="song-artist" class="text-gray-400">Artist Name</p>
+          </div>
+        
+          <div class="w-full mb-4">
+            <div class="flex justify-between text-sm text-gray-400 mb-1">
+              <span id="current-time">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+            <div class="h-2 bg-gray-700 rounded-full">
+              <div id="progress-bar" class="h-full bg-purple-500 rounded-full w-0"></div>
+            </div>
+          </div>
+  
+          <div class="flex items-center justify-center space-x-6 mb-8">
+            <button id="shuffle" class="text-gray-400 hover:text-purple-400 text-xl">
+              <i class="fas fa-random"></i>
+            </button>
+            <button id="prev" class="text-2xl hover:text-purple-400">
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="play" class="bg-purple-600 hover:bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="text-2xl hover:text-purple-400">
+              <i class="fas fa-step-forward"></i>
+            </button>
+            <button id="repeat" class="text-gray-400 hover:text-purple-400 text-xl">
+              <i class="fas fa-redo"></i>
+            </button>
+          </div>
+          
+          <div class="flex items-center space-x-3 w-full max-w-xs">
+            <i class="fas fa-volume-down text-gray-400"></i>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" class="w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+            <i class="fas fa-volume-up text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:w-1/3 bg-gray-800 rounded-xl p-6 shadow-lg">
+        <h2 class="text-xl font-bold mb-4 flex items-center">
+          <i class="fas fa-list-ul text-purple-500 mr-2"></i>
+          Playlist
+        </h2>
+        <ul id="playlist" class="space-y-2">
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+  <script type="module" src="/js/player.js"></script>
+</body>
+</html>

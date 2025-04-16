@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#volume::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-purple-500 cursor-pointer;
+}
+
+#volume::-moz-range-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-purple-500 cursor-pointer;
+}
+
+.active-song {
+  @apply bg-purple-900 border-l-4 border-purple-500;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-album {
+  animation: rotate 20s linear infinite;
+}
